@@ -3,7 +3,7 @@ substitutions:
   friendly_name: "LEDBrickHome"
   project_name: "SenseAtHome.ledbrickhome-16ch"
   project_version: "1.0"
-  hidden_ssid: "false"
+  fast_connect: "false"
 
 esphome:
   name: "${name}"
@@ -19,14 +19,17 @@ esp32:
     version: recommended
 
 logger:
+  level: INFO
 
 api:
 
 ota:
   - platform: esphome
 
+safe_mode:
+
 wifi:
-  fast_connect: ${hidden_ssid}
+  fast_connect: ${fast_connect}
   ap: {}
 
 captive_portal:
@@ -59,10 +62,6 @@ button:
 time:
   - platform: sntp
 
-switch:
-  - platform: factory_reset
-    name: Factory Reset
-
 text_sensor:
   - platform: wifi_info
     ip_address:
@@ -79,7 +78,7 @@ light:
   - platform: monochromatic
     name: "Channel 1"
     output: output_ch1
-    effects:
+    effects: &standard_effects
       - pulse:
       - flicker:
           intensity: 10%
@@ -87,19 +86,11 @@ light:
   - platform: monochromatic
     name: "Channel 2"
     output: output_ch2
-    effects:
-      - pulse:
-      - flicker:
-          intensity: 10%
-      - strobe:
+    effects: *standard_effects
   - platform: monochromatic
     name: "Channel 3"
     output: output_ch3
-    effects:
-      - pulse:
-      - flicker:
-          intensity: 10%
-      - strobe:
+    effects: *standard_effects
 #  - platform: rgb
 #    name: "RGB1"
 #    # Output channels may need swapping to match the wiring of your light
@@ -117,27 +108,15 @@ light:
   - platform: monochromatic
     name: "Channel 4"
     output: output_ch4
-    effects:
-      - pulse:
-      - flicker:
-          intensity: 10%
-      - strobe:
+    effects: *standard_effects
   - platform: monochromatic
     name: "Channel 5"
     output: output_ch5
-    effects:
-      - pulse:
-      - flicker:
-          intensity: 10%
-      - strobe:
+    effects: *standard_effects
   - platform: monochromatic
     name: "Channel 6"
     output: output_ch6
-    effects:
-      - pulse:
-      - flicker:
-          intensity: 10%
-      - strobe:
+    effects: *standard_effects
 #  - platform: rgb
 #    name: "RGB2"
 #    # Output channels may need swapping to match the wiring of your light
@@ -155,27 +134,15 @@ light:
   - platform: monochromatic
     name: "Channel 7"
     output: output_ch7
-    effects:
-      - pulse:
-      - flicker:
-          intensity: 10%
-      - strobe:
+    effects: *standard_effects
   - platform: monochromatic
     name: "Channel 8"
     output: output_ch8
-    effects:
-      - pulse:
-      - flicker:
-          intensity: 10%
-      - strobe:
+    effects: *standard_effects
   - platform: monochromatic
     name: "Channel 9"
     output: output_ch9
-    effects:
-      - pulse:
-      - flicker:
-          intensity: 10%
-      - strobe:
+    effects: *standard_effects
 #  - platform: rgb
 #    name: "RGB3"
 #    # Output channels may need swapping to match the wiring of your light
@@ -193,27 +160,15 @@ light:
   - platform: monochromatic
     name: "Channel 10"
     output: output_ch10
-    effects:
-      - pulse:
-      - flicker:
-          intensity: 10%
-      - strobe:
+    effects: *standard_effects
   - platform: monochromatic
     name: "Channel 11"
     output: output_ch11
-    effects:
-      - pulse:
-      - flicker:
-          intensity: 10%
-      - strobe:
+    effects: *standard_effects
   - platform: monochromatic
     name: "Channel 12"
     output: output_ch12
-    effects:
-      - pulse:
-      - flicker:
-          intensity: 10%
-      - strobe:
+    effects: *standard_effects
 #  - platform: rgb
 #    name: "RGB4"
 #    # Output channels may need swapping to match the wiring of your light
@@ -231,27 +186,15 @@ light:
   - platform: monochromatic
     name: "Channel 13"
     output: output_ch13
-    effects:
-      - pulse:
-      - flicker:
-          intensity: 10%
-      - strobe:
+    effects: *standard_effects
   - platform: monochromatic
     name: "Channel 14"
     output: output_ch14
-    effects:
-      - pulse:
-      - flicker:
-          intensity: 10%
-      - strobe:
+    effects: *standard_effects
   - platform: monochromatic
     name: "Channel 15"
     output: output_ch15
-    effects:
-      - pulse:
-      - flicker:
-          intensity: 10%
-      - strobe:
+    effects: *standard_effects
 #  - platform: rgb
 #    name: "RGB5"
 #    # Output channels may need swapping to match the wiring of your light
@@ -268,11 +211,7 @@ light:
   - platform: monochromatic
     name: "Channel 16"
     output: output_ch16
-    effects:
-      - pulse:
-      - flicker:
-          intensity: 10%
-      - strobe:
+    effects: *standard_effects
 
 # The output definitions should not need to be changed
 output:
