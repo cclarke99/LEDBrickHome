@@ -40,7 +40,7 @@ esp32_improv:
   authorizer: none
   
 dashboard_import:
-  package_import_url: github://AlexCPU/LEDBrickHome/Code/16ch-v1.yaml@main
+  package_import_url: github://cclarke99/LEDBrickHome/Code/16ch-v1.yaml@main
   import_full_config: true
 
 binary_sensor:
