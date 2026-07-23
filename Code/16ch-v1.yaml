@@ -17,6 +17,8 @@ esp32:
   framework:
     type: arduino
     version: recommended
+    advanced:
+      minimum_chip_revision: "3.1"
 
 logger:
   level: INFO
