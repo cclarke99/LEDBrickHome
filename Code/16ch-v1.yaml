@@ -19,6 +19,7 @@ esp32:
     version: recommended
     advanced:
       minimum_chip_revision: "3.1"
+      sram1_as_iram: true
 
 logger:
   level: INFO  # DEBUG floods logs / adds flash wear on a shipped device; drop to DEBUG only while troubleshooting
@@ -53,14 +54,6 @@ improv_serial:
 
 esp32_improv:
   authorizer: none
-
-dashboard_import:
-  # VERIFY: this currently points at AlexCPU/LEDBrickHome, but the file you're
-  # editing lives in SenseAtHome/LEDBrickHome. Update the org/user if that's a
-  # stale reference from a fork, otherwise dashboard imports will pull the
-  # wrong source.
-  package_import_url: github://SenseAtHome/LEDBrickHome/Code/16ch-v1.yaml@main
-  import_full_config: true
 
 binary_sensor:
   - platform: status
