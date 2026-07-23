@@ -233,15 +233,18 @@ output:
   - platform: ledc
     pin: GPIO12
     id: output_ch5
+    ignore_strapping_warning: true
   - platform: ledc
     pin: GPIO13
     id: output_ch6
   - platform: ledc
     pin: GPIO15
     id: output_ch7
+    ignore_strapping_warning: true
   - platform: ledc
     pin: GPIO2
     id: output_ch8
+    ignore_strapping_warning: true
   - platform: ledc
     pin: GPIO4
     id: output_ch9
@@ -254,6 +257,7 @@ output:
   - platform: ledc
     pin: GPIO5
     id: output_ch12
+    ignore_strapping_warning: true
   - platform: ledc
     pin: GPIO18
     id: output_ch13
