@@ -19,6 +19,7 @@ esp32:
     version: recommended
     advanced:
       minimum_chip_revision: "3.1"
+      sram1_as_iram: true
 
 logger:
   level: INFO
