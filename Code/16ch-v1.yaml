@@ -335,7 +335,9 @@ output:
     id: output_ch11
     frequency: 4000Hz
   - platform: ledc
-    pin: GPIO5
+    pin: 
+      number: GPIO5
+      ignore_strapping_warning: true  # verified safe - see note above
     id: output_ch12
     frequency: 4000Hz
   - platform: ledc
