@@ -17,6 +17,8 @@ esp32:
   framework:
     type: arduino
     version: recommended
+    advanced:
+      minimum_chip_revision: "3.1"
 
 logger:
   level: INFO  # DEBUG floods logs / adds flash wear on a shipped device; drop to DEBUG only while troubleshooting
