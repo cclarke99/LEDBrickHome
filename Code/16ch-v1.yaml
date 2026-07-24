@@ -40,8 +40,8 @@ wifi:
   # If your SSID actually is hidden, you generally want fast_connect OFF so the device
   # still scans and finds it; fast_connect is really for speeding up connects to a
   # known, visible AP. Double check this matches what "hidden_ssid" is meant to do.
-  fast_connect: ${hidden_ssid}
-  ap: {}
+  fast_connect: true
+  #ap: {}
   ssid: !secret wifi_ssid
   password: !secret wifi_password
 
