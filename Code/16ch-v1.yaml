@@ -15,7 +15,7 @@ esphome:
 esp32:
   board: esp32dev
   framework:
-    type: esp-idf
+    type: arduino
     version: recommended
     advanced:
       minimum_chip_revision: "3.1"
