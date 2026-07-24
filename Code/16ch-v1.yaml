@@ -1,21 +1,21 @@
 substitutions:
-  name: "ledbrickhome-16ch"
-  friendly_name: "LEDBrickHome"
-  project_name: "SenseAtHome.ledbrickhome-16ch"
-  project_version: "1.0"
-  hidden_ssid: "false"
+  name: "office-lego-wall-shelf"
+  friendly_name: LEDBrickHome
+  project_name: SenseAtHome.ledbrickhome-16ch
+  project_version: '1.0'
 
 esphome:
-  name: "${name}"
-  name_add_mac_suffix: true
+  name: ${name}
+  name_add_mac_suffix: false
   project:
-    name: "${project_name}"
-    version: "${project_version}"
+    name: ${project_name}
+    version: ${project_version}
+  friendly_name: ${friendly_name}
 
 esp32:
   board: esp32dev
   framework:
-    type: arduino
+    type: esp-idf
     version: recommended
     advanced:
       minimum_chip_revision: "3.1"
