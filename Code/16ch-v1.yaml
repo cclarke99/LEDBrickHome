@@ -1,3 +1,7 @@
+substitutions:
+  project_version: "1.0"
+  hidden_ssid: "false"
+
 esphome:
   name: ${name}
   name_add_mac_suffix: false
