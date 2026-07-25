@@ -1,9 +1,3 @@
-substitutions:
-  name: "office-lego-wall-shelf"
-  friendly_name: LEDBrickHome
-  project_name: SenseAtHome.ledbrickhome-16ch
-  project_version: '1.0'
-
 esphome:
   name: ${name}
   name_add_mac_suffix: false
@@ -79,7 +73,7 @@ text_sensor:
   - platform: wifi_info
     ip_address:
       name: "${friendly_name} IP Address"
-      disabled_by_default: true
+      disabled_by_default: false
 
 # ---------------------------------------------------------------------------
 # Reusable effects list. Anchored once here (&channel_effects) and referenced
